@@ -1,0 +1,62 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Movie {
+    private String title;
+    private String director;
+    private List<String> actors;
+    private List<String> reviews;
+
+    // Constructor to initialize the movie details
+    public Movie(String title, String director, List<String> actors) {
+        this.title = title;
+        this.director = director;
+        this.actors = actors;
+        this.reviews = new ArrayList<>();
+    }
+
+    // Method to add a review
+    public void addReview(String review) {
+        reviews.add(review);
+    }
+
+    // Method to retrieve all reviews
+    public List<String> getReviews() {
+        return reviews;
+    }
+
+    // Getter method for the title
+    public String getTitle() {
+        return title;
+    }
+
+    // Getter method for the director
+    public String getDirector() {
+        return director;
+    }
+
+    // Getter method for the actors
+    public List<String> getActors() {
+        return actors;
+    }
+
+    public static void main(String[] args) {
+        // Example usage of the Movie class
+        List<String> actors = new ArrayList<>();
+        actors.add("Actor1");
+        actors.add("Actor2");
+
+        Movie myMovie = new Movie("MovieTitle", "DirectorName", actors);
+
+        // Adding reviews
+        myMovie.addReview("Excellent movie! Must watch.");
+        myMovie.addReview("The acting was superb.");
+
+        // Retrieving and displaying reviews
+        List<String> movieReviews = myMovie.getReviews();
+        System.out.println("Movie Reviews for " + myMovie.getTitle() + ":");
+        for (String review : movieReviews) {
+            System.out.println("- " + review);
+        }
+    }
+}
