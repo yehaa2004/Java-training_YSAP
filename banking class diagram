@@ -1,0 +1,17 @@
+classDiagram
+    Account {
+        + accountNumber: String
+        + accountHolderName: String
+        + balance: double
+        + deposit(amount: double): void
+        + withdraw(amount: double): void
+        + displayDetails(): void
+    }
+    BankMain {
+        + account: Account
+        + BankMain(accountNumber: String, accountHolderName: String): void
+        + deposit(amount: double): void
+        + withdraw(amount: double): void
+        + displayAccountDetails(): void
+    }
+    Account -->|> BankMain: creates, uses
